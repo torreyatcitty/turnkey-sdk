@@ -33,13 +33,13 @@ export async function create(
   options: CredentialCreationOptions
 ): Promise<RegistrationPublicKeyCredential> {
 
-  console.log("[TurnKeySDK] options: ", options);
+  console.log("[Torrey's TurnKeySDK] options: ", options);
 
   const response = (await navigator.credentials.create(
     options
   )) as RegistrationPublicKeyCredential;
 
-  console.log("[TurnKeySDK] response: ", options);
+  console.log("[Torrey's TurnKeySDK] response: ", response);
   response.toJSON = () => createResponseToJSON(response);
   return response;
 }

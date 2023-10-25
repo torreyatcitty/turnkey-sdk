@@ -32,9 +32,14 @@ export interface RegistrationPublicKeyCredential extends PublicKeyCredential {
 export async function create(
   options: CredentialCreationOptions
 ): Promise<RegistrationPublicKeyCredential> {
+
+  console.log("[TurnKeySDK] options: ", options);
+
   const response = (await navigator.credentials.create(
     options
   )) as RegistrationPublicKeyCredential;
+
+  console.log("[TurnKeySDK] response: ", options);
   response.toJSON = () => createResponseToJSON(response);
   return response;
 }

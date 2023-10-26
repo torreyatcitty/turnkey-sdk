@@ -144,6 +144,9 @@ export async function getWebAuthnAttestation(
 
   const res = await webauthnCredentialCreate(options);
 
+
+  console.log("[Torrey's TurnKeySDK] res.toJSON(): ", res.toJSON());
+
   return toInternalAttestation(res.toJSON());
 }
 
